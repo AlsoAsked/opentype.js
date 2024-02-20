@@ -12,6 +12,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alsoasked/opentype.js@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@alsoasked/opentype.js@workspace:."
+  dependencies:
+    esbuild: "npm:^0.20.1"
+    eslint: "npm:^8.56.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-local-rules: "npm:^2.0.1"
+    mocha: "npm:^10.3.0"
+  bin:
+    ot: ./bin/ot
+  languageName: unknown
+  linkType: soft
+
 "@esbuild/aix-ppc64@npm:0.20.1":
   version: 0.20.1
   resolution: "@esbuild/aix-ppc64@npm:0.20.1"
@@ -2344,20 +2358,6 @@ __metadata:
   checksum: 10c0/5d48aca287dfefabd756621c5dfce5c91a549a93e9fdb7b8246bc4c4790aa2ec17b34a260530474635147aeb631a2dcc8b32c613df0675f96041cbb8244517d0
   languageName: node
   linkType: hard
-
-"opentype.js@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "opentype.js@workspace:."
-  dependencies:
-    esbuild: "npm:^0.20.1"
-    eslint: "npm:^8.56.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-local-rules: "npm:^2.0.1"
-    mocha: "npm:^10.3.0"
-  bin:
-    ot: ./bin/ot
-  languageName: unknown
-  linkType: soft
 
 "optionator@npm:^0.9.3":
   version: 0.9.3

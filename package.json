@@ -1,5 +1,6 @@
 {
-  "name": "opentype.js",
+  "name": "@alsoasked/opentype.js",
+  "version": "1.0.1",
   "description": "OpenType font parser",
   "type": "module",
   "packageManager": "yarn@4.1.0",
