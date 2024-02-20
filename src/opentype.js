@@ -35,6 +35,10 @@ import os2 from './tables/os2.js';
 import post from './tables/post.js';
 import meta from './tables/meta.js';
 import gasp from './tables/gasp.js';
+import fs from 'fs';
+import http from 'http';
+import https from 'https';
+
 /**
  * The opentype library.
  * @namespace opentype
@@ -48,7 +52,7 @@ import gasp from './tables/gasp.js';
  * @param  {Function} callback - The function to call when the font load completes
  */
 function loadFromFile(path, callback) {
-    require('fs').readFile(path, function(err, buffer) {
+    fs.readFile(path, function(err, buffer) {
         if (err) {
             return callback(err.message);
         }
@@ -88,7 +92,7 @@ function loadFromUrl(url, callback) {
     } else if ( isNode() ) {
         // Node environment, we use the http/https libraries (to avoid extra dependencies like axios).
 
-        const lib = url.startsWith('https:') ? require('https') : require('http');
+        const lib = url.startsWith('https:') ? https : http;
 
         const req = lib.request(url, res => {
             // Follow redirections
@@ -529,7 +533,7 @@ function load(url, callback, opt = {}) {
  * @return {opentype.Font}
  */
 function loadSync(url, opt) {
-    return parseBuffer(require('fs').readFileSync(url), opt);
+    return parseBuffer(fs.readFileSync(url), opt);
 }
 
 export {

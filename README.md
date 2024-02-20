@@ -40,7 +40,7 @@ Select one of the following sources in the next example:
 
 <!-- using module declaration (need full path) -->
 <script type=module>
-import { parse } from "https://unpkg.com/opentype.js/dist/opentype.module.js";
+import { parse } from "https://unpkg.com/opentype.js/dist/opentype.js";
 parse(...);
 </script>
 ```
@@ -50,7 +50,7 @@ parse(...);
 ```sh
 npm install opentype.js
 ```
- 
+
 ```js
 const opentype = require('opentype.js');
 
@@ -322,7 +322,7 @@ Convert the path to an SVG `<path>` element, as a string.
 * `options`: see `Path.toPathData()`
 
 ##### `Path.fromSVG(pathData, options)`
-Retrieve path from SVG path data. 
+Retrieve path from SVG path data.
 
 Either overwriting the path data for an existing path:
 ```js
