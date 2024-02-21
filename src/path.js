@@ -30,8 +30,8 @@ function roundDecimal(float, places) {
         const roundedDecimalPart = decimalRoundingCache[places][decimalPart];
         return integerPart + roundedDecimalPart;
     }
-    
-    const roundedDecimalPart = +(Math.round(decimalPart + 'e+' + places) + 'e-' + places);
+
+    const roundedDecimalPart = +(Math.round(decimalPart * (Math.pow(10, places))) * (Math.pow(10, -places)));
     decimalRoundingCache[places][decimalPart] = roundedDecimalPart;
 
     return integerPart + roundedDecimalPart;
@@ -667,7 +667,7 @@ Path.prototype.toDOMElement = function(options, pathData) {
             newPath.setAttribute('fill', this.fill);
         }
     }
-    
+
     if (this.stroke) {
         newPath.setAttribute('stroke', this.stroke);
         newPath.setAttribute('stroke-width', this.strokeWidth);
